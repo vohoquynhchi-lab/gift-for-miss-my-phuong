@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Gift for You</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fff3ed;
+  color: #75545b;
+  font-family: Georgia, serif;
+  text-align: center;
+}
+
+header {
+  padding: 75px 20px;
+  background: linear-gradient(135deg,#f5dce2,#fff5e9,#eadff2);
+}
+
+h1 {
+  font-size: 48px;
+  color: #a9687b;
+}
+
+h2 { color: #ae7180; }
+
+p { line-height: 1.8; }
+
+section {
+  padding: 40px 20px;
+  max-width: 760px;
+  margin: auto;
+}
+
+.paper {
+  background: #fffaf5;
+  border: 2px dashed #d8abb4;
+  border-radius: 22px;
+  padding: 30px 22px;
+  margin: 20px auto;
+  box-shadow: 0 8px 25px #bd8e9620;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 14px 24px;
+  background: #bd8190;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button:hover {
+  background: #a9687b;
+}
+
+.big {
+  font-size: 65px;
+  cursor: pointer;
+}
+
+.hidden { display: none; }
+
+footer {
+  padding: 45px 20px;
+  background: #f4dfe3;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="big">🌷 ✨ 🌷</div>
+  <h1>A Little Gift for You</h1>
+  <p>A secret little surprise made with love</p>
+  <p>Gửi cô Phương thân yêu 💗</p>
+  <button onclick="goToLetter()">
+    Start the Surprise ↓
+  </button>
+</header>
+
+<section id="letter">
+  <div class="paper">
+    <div class="big">💌</div>
+    <h2>A Letter for You</h2>
+    <p>Một lá thư nhỏ dành riêng cho cô.</p>
+
+    <button onclick="openLetter()">
+      Open My Letter
+    </button>
+
+    <div id="letterText" class="hidden">
+      <h2>Dear cô Phương,</h2>
+      <p>
+        Cảm ơn cô vì đã luôn tận tâm,
+        kiên nhẫn và truyền cảm hứng cho chúng em.
+      </p>
+      <p>
+        Nhân ngày Nhà giáo Việt Nam 20/11,
+        em chúc cô luôn mạnh khỏe, vui vẻ
+        và gặp thật nhiều điều tốt đẹp.
+      </p>
+      <p>Em cảm ơn cô rất nhiều! ♡</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="paper">
+    <div class="big">🎁</div>
+    <h2>A Little Surprise</h2>
+    <p>Một món quà nhỏ dành riêng cho cô.</p>
+
+    <button onclick="showGift()">
+      Open the Gift
+    </button>
+
+    <div id="giftText" class="hidden">
+      <h2>🌸 You Are Amazing! 🌸</h2>
+      <p>
+        Cảm ơn cô vì đã làm cho mỗi ngày
+        đến lớp trở nên thật ý nghĩa.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="paper">
+    <div class="big">📸</div>
+    <h2>Little Memories</h2>
+    <p>Nơi lưu giữ những khoảnh khắc đáng nhớ.</p>
+    <p>♡ Thank you for every lesson and every smile ♡</p>
+  </div>
+</section>
+
+<footer>
+  <div class="big">💗</div>
+  <h2>Thank You, Teacher!</h2>
+  <p>Made with love, especially for cô Phương.</p>
+  <p>Happy Vietnamese Teachers' Day 20/11!</p>
+</footer>
+
+<script>
+function goToLetter() {
+  document.getElementById("letter")
+    .scrollIntoView({behavior:"smooth"});
+}
+
+function openLetter() {
+  document.getElementById("letterText")
+    .classList.toggle("hidden");
+}
+
+function showGift() {
+  document.getElementById("giftText")
+    .classList.toggle("hidden");
+}
+</script>
+
+</body>
+</html>
