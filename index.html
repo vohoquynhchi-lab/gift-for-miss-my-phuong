@@ -5,172 +5,291 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A Little Gift for You</title>
+
+<style>
 * {
+  box-sizing: border-box;
   letter-spacing: normal !important;
   word-spacing: normal !important;
 }
 
-h1, h2, p, button {
-  letter-spacing: 0 !important;
-  word-spacing: 0 !important;
+html {
+  scroll-behavior: smooth;
 }
-<style>
-* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  background: #fff3ed;
-  color: #75545b;
+  padding: 0;
+  background: #fff5ef;
+  color: #71535b;
   font-family: Georgia, serif;
-  text-align: center;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
 header {
-  padding: 75px 20px;
-  background: linear-gradient(135deg,#f5dce2,#fff5e9,#eadff2);
+  padding: 85px 20px 75px;
+  background: linear-gradient(135deg,
+    #f6dfe5, #fff4e8, #e9e1f4);
 }
 
 h1 {
-  font-size: 48px;
-  color: #a9687b;
+  color: #a9677c;
+  font-size: clamp(32px, 7vw, 55px);
+  line-height: 1.2;
+  margin: 15px 0;
 }
 
-h2 { color: #ae7180; }
+h2 {
+  color: #ae7180;
+  font-size: 27px;
+  line-height: 1.3;
+}
 
-p { line-height: 1.8; }
+p {
+  line-height: 1.8;
+  margin: 12px 0;
+}
 
 section {
-  padding: 40px 20px;
-  max-width: 760px;
+  padding: 45px 18px;
+  width: 100%;
+  max-width: 780px;
   margin: auto;
 }
 
 .paper {
-  background: #fffaf5;
-  border: 2px dashed #d8abb4;
+  background: #fffdf9;
+  border: 2px dashed #dfb4bd;
   border-radius: 22px;
-  padding: 30px 22px;
-  margin: 20px auto;
-  box-shadow: 0 8px 25px #bd8e9620;
+  padding: 30px 24px;
+  margin: 15px auto;
+  box-shadow: 0 10px 30px rgba(170,110,125,0.10);
+}
+
+.flower {
+  font-size: 45px;
+}
+
+.big {
+  font-size: 65px;
+  margin: 10px;
 }
 
 button {
   border: none;
   border-radius: 30px;
-  padding: 14px 24px;
+  padding: 13px 25px;
   background: #bd8190;
   color: white;
-  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
   cursor: pointer;
-  margin: 10px;
+  margin: 12px 5px;
+  transition: 0.3s;
 }
 
 button:hover {
   background: #a9687b;
+  transform: translateY(-3px);
 }
 
-.big {
-  font-size: 65px;
-  cursor: pointer;
+.hidden {
+  display: none;
 }
 
-.hidden { display: none; }
+.message {
+  background: #fff3f2;
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 20px;
+  animation: appear 0.6s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.memory {
+  background: #f9e9e9;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 15px;
+}
 
 footer {
-  padding: 45px 20px;
-  background: #f4dfe3;
+  background: linear-gradient(135deg,#f5dce2,#fff0e5);
+  padding: 55px 20px;
 }
+
+footer h2 {
+  font-size: 30px;
+}
+
+.small {
+  font-size: 13px;
+  color: #9c7a80;
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="big">🌷 ✨ 🌷</div>
+  <div class="flower">🌷 ✨ 🌷</div>
+
   <h1>A Little Gift for You</h1>
+
   <p>A secret little surprise made with love</p>
-  <p>Gửi cô Phương thân yêu 💗</p>
+
+  <p>Gửi cô Phương thân yêu ♡</p>
+
   <button onclick="goToLetter()">
-    Start the Surprise ↓
+    Discover Your Gift ↓
   </button>
 </header>
 
 <section id="letter">
   <div class="paper">
-    <div class="big">💌</div>
-    <h2>A Letter for You</h2>
-    <p>Một lá thư nhỏ dành riêng cho cô.</p>
 
-    <button onclick="openLetter()">
-      Open My Letter
+    <div class="big">💌</div>
+
+    <h2>A Letter for You</h2>
+
+    <p>
+      Một lá thư nhỏ chứa đựng
+      những lời cảm ơn chân thành.
+    </p>
+
+    <button onclick="toggleContent('letterText')">
+      Open My Letter ♡
     </button>
 
-    <div id="letterText" class="hidden">
+    <div id="letterText" class="hidden message">
+
       <h2>Dear cô Phương,</h2>
+
       <p>
         Cảm ơn cô vì đã luôn tận tâm,
-        kiên nhẫn và truyền cảm hứng cho chúng em.
+        kiên nhẫn và truyền cảm hứng
+        cho chúng em.
       </p>
+
       <p>
         Nhân ngày Nhà giáo Việt Nam 20/11,
-        em chúc cô luôn mạnh khỏe, vui vẻ
-        và gặp thật nhiều điều tốt đẹp.
+        em chúc cô luôn mạnh khỏe,
+        vui vẻ và gặp thật nhiều điều tốt đẹp.
       </p>
-      <p>Em cảm ơn cô rất nhiều! ♡</p>
+
+      <p>
+        Cảm ơn cô vì tất cả những điều
+        tuyệt vời cô đã dành cho chúng em.
+      </p>
+
+      <h3>With love ♡</h3>
+
     </div>
   </div>
 </section>
 
 <section>
   <div class="paper">
-    <div class="big">🎁</div>
-    <h2>A Little Surprise</h2>
-    <p>Một món quà nhỏ dành riêng cho cô.</p>
 
-    <button onclick="showGift()">
-      Open the Gift
+    <div class="big">🎁</div>
+
+    <h2>A Little Surprise</h2>
+
+    <p>
+      Cô hãy mở món quà nhỏ này nhé!
+    </p>
+
+    <button onclick="toggleContent('giftText')">
+      Open the Gift ✨
     </button>
 
-    <div id="giftText" class="hidden">
-      <h2>🌸 You Are Amazing! 🌸</h2>
+    <div id="giftText" class="hidden message">
+
+      <div class="big">🌸</div>
+
+      <h2>You Are Amazing!</h2>
+
       <p>
-        Cảm ơn cô vì đã làm cho mỗi ngày
-        đến lớp trở nên thật ý nghĩa.
+        Cô là một người giáo viên tuyệt vời.
+        Chúc cô luôn giữ được nụ cười
+        và niềm đam mê với nghề giáo.
       </p>
+
+      <p>Thank you for everything! ♡</p>
+
     </div>
   </div>
 </section>
 
 <section>
   <div class="paper">
+
     <div class="big">📸</div>
+
     <h2>Little Memories</h2>
-    <p>Nơi lưu giữ những khoảnh khắc đáng nhớ.</p>
-    <p>♡ Thank you for every lesson and every smile ♡</p>
+
+    <p>
+      Những khoảnh khắc đẹp luôn
+      xứng đáng được lưu giữ.
+    </p>
+
+    <div class="memory">
+      🌷 Every lesson is a beautiful memory.
+    </div>
+
+    <div class="memory">
+      💗 Every smile makes the day brighter.
+    </div>
+
+    <div class="memory">
+      ✨ Every moment is special.
+    </div>
+
   </div>
 </section>
 
 <footer>
+
   <div class="big">💗</div>
+
   <h2>Thank You, Teacher!</h2>
-  <p>Made with love, especially for cô Phương.</p>
-  <p>Happy Vietnamese Teachers' Day 20/11!</p>
+
+  <p>
+    Made with love, especially for cô Phương.
+  </p>
+
+  <p>
+    Happy Vietnamese Teachers' Day 20/11!
+  </p>
+
+  <p class="small">
+    A little gift, a lot of gratitude.
+  </p>
+
 </footer>
 
 <script>
 function goToLetter() {
   document.getElementById("letter")
-    .scrollIntoView({behavior:"smooth"});
+    .scrollIntoView({ behavior: "smooth" });
 }
 
-function openLetter() {
-  document.getElementById("letterText")
-    .classList.toggle("hidden");
-}
-
-function showGift() {
-  document.getElementById("giftText")
-    .classList.toggle("hidden");
+function toggleContent(id) {
+  const element = document.getElementById(id);
+  element.classList.toggle("hidden");
 }
 </script>
 
