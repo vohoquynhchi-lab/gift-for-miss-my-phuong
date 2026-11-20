@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Little Gift for You</title>
+<title>A Little Gift for You ♡</title>
 
 <style>
 * {
@@ -12,16 +12,12 @@
   letter-spacing: 0 !important;
   word-spacing: 0 !important;
   word-break: normal !important;
-  overflow-wrap: break-word;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  padding: 0;
   background: #fff5ef;
   color: #71535b;
   font-family: Arial, sans-serif;
@@ -30,38 +26,26 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, p, button, div {
-  letter-spacing: 0 !important;
-  word-spacing: 0 !important;
-  word-break: normal !important;
-}
-
 header {
   padding: 85px 20px 75px;
-  background: linear-gradient(135deg, #f6dfe5, #fff4e8, #e9e1f4);
+  background: linear-gradient(135deg,#f6dfe5,#fff4e8,#e9e1f4);
   text-align: center;
 }
 
 h1 {
   color: #a9677c;
-  font-size: clamp(32px, 7vw, 55px);
+  font-family: Georgia, serif;
+  font-size: clamp(32px,7vw,55px);
   line-height: 1.2;
   margin: 15px 0;
 }
 
-h2 {
-  color: #ae7180;
-  font-size: 27px;
-  line-height: 1.4;
-}
+h2 { color: #ae7180; }
 
-p {
-  line-height: 1.8;
-  margin: 12px 0;
-}
+p { line-height: 1.8; }
 
 section {
-  padding: 45px 18px;
+  padding: 40px 18px;
   width: 100%;
   max-width: 780px;
   margin: auto;
@@ -73,13 +57,11 @@ section {
   border-radius: 22px;
   padding: 30px 24px;
   margin: 15px auto;
-  box-shadow: 0 10px 30px rgba(170,110,125,0.10);
+  box-shadow: 0 10px 30px rgba(170,110,125,.10);
   text-align: center;
 }
 
-.flower {
-  font-size: 45px;
-}
+.flower { font-size: 45px; }
 
 .big {
   font-size: 65px;
@@ -92,11 +74,11 @@ button {
   padding: 13px 25px;
   background: #bd8190;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: Arial,sans-serif;
   font-size: 15px;
   cursor: pointer;
   margin: 12px 5px;
-  transition: 0.3s;
+  transition: .3s;
 }
 
 button:hover {
@@ -104,34 +86,21 @@ button:hover {
   transform: translateY(-3px);
 }
 
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
 .message {
   background: #fff3f2;
   padding: 20px;
   border-radius: 16px;
   margin-top: 20px;
-  animation: appear 0.6s ease;
-  text-align: center;
+  animation: appear .6s ease;
 }
 
-.message p {
-  white-space: normal;
-  text-align: center;
-  line-height: 1.8;
-}
+.message p { line-height: 1.8; }
 
 @keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .memory {
@@ -141,15 +110,43 @@ button:hover {
   margin-top: 15px;
 }
 
+.album-frame {
+  background: #fff3f2;
+  padding: 14px;
+  border: 2px solid #e9c6cd;
+  border-radius: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+.album-frame img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f9e9e9;
+}
+
+.photo-caption {
+  color: #a9677c;
+  font-family: Georgia,serif;
+  margin: 15px 0 5px;
+  font-style: italic;
+}
+
+.album-count {
+  color: #9c7a80;
+  font-size: 13px;
+}
+
 footer {
-  background: linear-gradient(135deg, #f5dce2, #fff0e5);
+  background: linear-gradient(135deg,#f5dce2,#fff0e5);
   padding: 55px 20px;
   text-align: center;
 }
 
-footer h2 {
-  font-size: 30px;
-}
+footer h2 { font-size: 30px; }
 
 .small {
   font-size: 13px;
@@ -163,11 +160,8 @@ footer h2 {
 
 <header>
   <div class="flower">🌷 ✨ 🌷</div>
-
   <h1>A Little Gift for You</h1>
-
   <p>A secret little surprise made with love</p>
-
   <p>Gửi cô Phương thân yêu ♡</p>
 
   <button onclick="goToLetter()">
@@ -177,9 +171,7 @@ footer h2 {
 
 <section id="letter">
   <div class="paper">
-
     <div class="big">💌</div>
-
     <h2>A Letter for You</h2>
 
     <p>
@@ -192,7 +184,6 @@ footer h2 {
     </button>
 
     <div id="letterText" class="hidden message">
-
       <h2>Dear cô Phương,</h2>
 
       <p>
@@ -208,28 +199,58 @@ footer h2 {
       </p>
 
       <h3>With love ♡</h3>
-
     </div>
+  </div>
+</section>
+
+<!-- PHOTO ALBUM -->
+<section id="album">
+  <div class="paper">
+    <div class="big">📸</div>
+    <h2>Our Beautiful Memories</h2>
+
+    <p>
+      A little album filled with lovely memories ♡
+    </p>
+
+    <div class="album-frame">
+      <img
+        id="albumPhoto"
+        src="co-1.jpg"
+        alt="Ảnh cô Phương"
+      >
+
+      <p class="photo-caption" id="photoCaption">
+        A wonderful teacher ♡
+      </p>
+
+      <p class="album-count" id="albumCount">
+        Photo 1 / 4
+      </p>
+    </div>
+
+    <button onclick="changePhoto(-1)">
+      ← Previous
+    </button>
+
+    <button onclick="changePhoto(1)">
+      Next →
+    </button>
   </div>
 </section>
 
 <section>
   <div class="paper">
-
     <div class="big">🎁</div>
-
     <h2>A Little Surprise</h2>
 
-    <p>
-      Cô hãy mở món quà nhỏ này nhé!
-    </p>
+    <p>Cô hãy mở món quà nhỏ này nhé!</p>
 
     <button onclick="toggleContent('giftText')">
       Open the Gift ✨
     </button>
 
     <div id="giftText" class="hidden message">
-
       <div class="big">🌸</div>
 
       <h2>You Are Amazing!</h2>
@@ -241,16 +262,13 @@ footer h2 {
       </p>
 
       <p>Thank you for everything! ♡</p>
-
     </div>
   </div>
 </section>
 
 <section>
   <div class="paper">
-
-    <div class="big">📸</div>
-
+    <div class="big">🌷</div>
     <h2>Little Memories</h2>
 
     <p>
@@ -269,28 +287,21 @@ footer h2 {
     <div class="memory">
       ✨ Every moment is special.
     </div>
-
   </div>
 </section>
 
 <footer>
-
   <div class="big">💗</div>
 
   <h2>Thank You, Teacher!</h2>
 
-  <p>
-    Made with love, especially for cô Phương.
-  </p>
+  <p>Made with love, especially for cô Phương.</p>
 
-  <p>
-    Happy Vietnamese Teachers' Day 20/11!
-  </p>
+  <p>Happy Vietnamese Teachers' Day 20/11!</p>
 
   <p class="small">
     A little gift, a lot of gratitude.
   </p>
-
 </footer>
 
 <script>
@@ -302,6 +313,35 @@ function goToLetter() {
 function toggleContent(id) {
   const element = document.getElementById(id);
   element.classList.toggle("hidden");
+}
+
+const photos = [
+  "co-1.jpg",
+  "co-2.jpg",
+  "co-3.jpg",
+  "co-4.jpg"
+];
+
+const captions = [
+  "A wonderful teacher ♡",
+  "A beautiful inspiration 🌷",
+  "Thank you for everything 💗",
+  "With love, cô Phương ✨"
+];
+
+let currentPhoto = 0;
+
+function changePhoto(direction) {
+  currentPhoto = (currentPhoto + direction + photos.length) % photos.length;
+
+  document.getElementById("albumPhoto").src =
+    photos[currentPhoto];
+
+  document.getElementById("photoCaption").textContent =
+    captions[currentPhoto];
+
+  document.getElementById("albumCount").textContent =
+    "Photo " + (currentPhoto + 1) + " / " + photos.length;
 }
 </script>
 
